@@ -84,8 +84,6 @@ function extractEventFromCSVObject(orig_row) {
         timelineElementColor: interpretBackground(row["Timeline Color"]),
     };
 
-    console.log(d);
-
     if (
         Object.keys(row).includes("Start Date") ||
         Object.keys(row).includes("End Date")
