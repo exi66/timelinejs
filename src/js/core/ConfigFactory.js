@@ -153,8 +153,13 @@ export async function readGoogleAsCSV(url, sheets_proxy) {
     url = makeGoogleCSVURL(url);
     let error = null;
 
+    let localUrl = url;
+    if (sheets_proxy) {
+        localUrl = `${sheets_proxy}${url}`;
+    }
+
     await fetchCSV({
-        url: `${sheets_proxy}${url}`,
+        url: localUrl,
     })
         .then((d) => {
             rows = d;
@@ -266,9 +271,9 @@ var buildGoogleFeedURL = function (key, api_version) {
 };
 
 export async function jsonFromGoogleURL(google_url, options) {
-    if (!options["sheets_proxy"]) {
-        throw new TLError("Proxy option must be set to read data from Google");
-    }
+    // if (!options["sheets_proxy"]) {
+    //     throw new TLError("Proxy option must be set to read data from Google");
+    // }
 
     var timeline_json = await readGoogleAsCSV(
         google_url,
