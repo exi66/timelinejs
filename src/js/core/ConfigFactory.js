@@ -388,6 +388,4 @@ function handleRow(event, timeline_config) {
     } else {
         timeline_config.events.push(event);
     }
-
-    console.log(event);
 }
