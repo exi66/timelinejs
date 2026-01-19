@@ -36,7 +36,7 @@
                 language: "ru",
                 initial_zoom: 4,
                 duration: 150,
-                theme: "contrast",
+                //theme: "contrast",
                 hash_bookmark: true,
                 start_at_end: false,
                 autolink: false,
@@ -59,7 +59,7 @@
                 window.timeline = new TL.Timeline(
                     "timeline-embed",
                     dataUrl,
-                    options
+                    options,
                 );
             }
 
@@ -79,7 +79,7 @@
                 window.timeline = new TL.Timeline(
                     "timeline-embed",
                     dataUrl,
-                    options
+                    options,
                 );
 
                 window.timeline.on("ready", () => {
